@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QGC和MP地面站网口摄像头图传链接 &mdash; HOMER_wiki 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="免责声明与简介" href="7远程桌面链接设置.html" />
+    <link rel="prev" title="产品说明" href="5产品说明.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HOMER_wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1免责声明与简介.html">第一章.免责声明与简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2产品使用注意事项.html">第二章.产品使用注意事项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3包装主要清单.html">第三章.包装主要清单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4模块安装说明.html">第四章.模块安装说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5产品说明.html">第五章.产品说明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第六章.QGC和MP地面站网口摄像头图传链接</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">6.1 准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">6.2 测试摄像头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">6.3 连接摄像头和图传</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7远程桌面链接设置.html">第七章.远程桌面链接设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8TTL数据传输链接设置.html">第八章.TTL数据传输链接设置</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HOMER_wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>QGC和MP地面站网口摄像头图传链接</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/6QGC和MP地面站网口摄像头图传链接.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="qgcmp">
+<h1>QGC和MP地面站网口摄像头图传链接<a class="headerlink" href="#qgcmp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>6.1 准备工作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>安装摄像头电脑客户端，VLC，QGC，了解RTSP网络传输协议，具备基本的TCP/IP网络链接知识。
+上面软件的下载地址为：</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>1.QGC链接：<a class="reference external" href="https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w">https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w</a></dt>
+<dd>提取码：4h3u</dd>
+<dt>2.摄像头电脑客户端和VLC链接：<a class="reference external" href="https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA">https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA</a></dt>
+<dd>提取码：rr5b</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>6.2 测试摄像头<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li>网络摄像头出厂默认IP为192.168.1.10，链接到PC的时候确保在同一网段，也就是PC的IP地址最好设置为192.168.1.X 的网段</li>
+<li>关闭无线网络，将网络摄像头用网线连接到电脑，ping一下摄像头的IP确保连接；</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt01.png" src="../_images/sxt01.png" />
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>打开摄像头电脑客户端CMS，直接登录；</li>
+<li>点击系统设置——监测点管理——添加区域——添加设备——IP搜索——添加设备；</li>
+<li>如果搜不到设备，可以手动添加设备。在IP地址输入192.168.1.10</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt02.png" src="../_images/sxt02.png" />
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>双击设备，显示图像，说明摄像头工作正常。</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt03.png" src="../_images/sxt03.png" />
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>修改摄像头IP：设备配置——192.168.1.10——网络设置——修改IP地址，子网掩码，默认网关，DNS等信息；</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt04.png" src="../_images/sxt04.png" />
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>点击确定，等待保存。</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt05.png" src="../_images/sxt05.png" />
+<p>设置端口的原因是图传端的网络地址，可以对应起来，确保图传的网络可以ping通这个网络摄像头即可。有的时候IP冲突导致IP分配
+异常，换一个新的IP即可。我们出厂的网络摄像头，不修改的话是192.168.1.10.</p>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li>根据设置的IP，在电脑客户端重新添加摄像头。</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>6.3 连接摄像头和图传<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li>把图传地面端用网线接到电脑，确保图传地面端与空中端连接成功，地面端和移动端可以相互ping通;</li>
+<li>用网线连接网络摄像头与移动端图传;</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt06.png" src="../_images/sxt06.png" />
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>整体连接图如下；</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt00.png" src="../_images/sxt00.png" />
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>用电脑能够ping通网络摄像头的IP;</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt07.png" src="../_images/sxt07.png" />
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>再用摄像头电脑客户端CMS测试摄像头图像是否正常;</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt08.png" src="../_images/sxt08.png" />
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><dl class="first docutils">
+<dt>测试RTSP格式的视频流：打开VLC——媒体——打开网络串流——网络——输入URL。</dt>
+<dd>URL示例：
+<a class="reference external" href="rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp">rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp</a>?
+确保网络摄像头的IP，如果默认192.168.1.10，被修改了就按照修改的IP地址，可以ping通就行。</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt09.png" src="../_images/sxt09.png" />
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>点击播放，显示摄像头图像;</li>
+<li><dl class="first docutils">
+<dt>用同样的URL可以在GQC地面站添加RTSP视频流：视频来源选择RTSP，URL输入测试通过的URL：</dt>
+<dd><a class="reference external" href="rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp">rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp</a>?</dd>
+</dl>
+</li>
+</ol>
+<blockquote>
+<div><img alt="../_images/sxt10.png" src="../_images/sxt10.png" />
+<img alt="../_images/sxt11.png" src="../_images/sxt11.png" />
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="7远程桌面链接设置.html" class="btn btn-neutral float-right" title="免责声明与简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="5产品说明.html" class="btn btn-neutral float-left" title="产品说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, amov-dev
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
