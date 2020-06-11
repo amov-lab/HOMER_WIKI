@@ -1,7 +1,7 @@
-.. QGC和MP地面站网口摄像头图传链接:
+.. QGC地面站、网口摄像头和图传的连接:
 
 =====================================
-QGC和MP地面站网口摄像头图传链接
+第六章   QGC地面站、网口摄像头和图传的连接
 =====================================
 
 6.1 准备工作
@@ -9,10 +9,12 @@ QGC和MP地面站网口摄像头图传链接
 
 安装摄像头电脑客户端，VLC，QGC，了解RTSP网络传输协议，具备基本的TCP/IP网络链接知识。
 上面软件的下载地址为：
-    1.QGC链接：https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w 
-       提取码：4h3u
-    2.摄像头电脑客户端和VLC链接：https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA 
-        提取码：rr5b
+    1.QGC链接：
+      https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w 
+      提取码：4h3u
+    2.摄像头电脑客户端和VLC链接：
+      https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA 
+      提取码：rr5b
 
 6.2 测试摄像头
 =============================
@@ -52,14 +54,20 @@ QGC和MP地面站网口摄像头图传链接
       .. image:: ../images/sxt08.png
 
     6. 测试RTSP格式的视频流：打开VLC——媒体——打开网络串流——网络——输入URL。
-         URL示例：
-         rtsp://192.168.1.83:554/user=admin&password=&channel=1&stream=0.sdp?
-         确保网络摄像头的IP，如果默认192.168.1.10，被修改了就按照修改的IP地址，可以ping通就行。
-      .. image:: ../images/sxt09.png
+      URL示例：
+        ::
+
+          rtsp://192.168.1.83:554/user=admin&password=&channel=1&stream=0.sdp?
+      
+      确保网络摄像头的IP，如果默认192.168.1.10，被修改了就按照修改的IP地址，可以ping通就行。
+     .. image:: ../images/sxt09.png
 
     7. 点击播放，显示摄像头图像;
 
     8.  用同样的URL可以在GQC地面站添加RTSP视频流：视频来源选择RTSP，URL输入测试通过的URL：
+        ::
+
           rtsp://192.168.1.83:554/user=admin&password=&channel=1&stream=0.sdp?
+      
       .. image:: ../images/sxt10.png
       .. image:: ../images/sxt11.png

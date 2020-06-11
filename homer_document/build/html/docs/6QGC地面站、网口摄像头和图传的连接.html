@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>QGC和MP地面站网口摄像头图传链接 &mdash; HOMER_wiki 1.0 documentation</title>
+  <title>第六章 QGC地面站、网口摄像头和图传的连接 &mdash; HOMER_wiki 1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="第七章 图数传远程桌面连接设置" href="7远程桌面连接设置.html" />
+    <link rel="next" title="第七章 远程桌面连接设置" href="7远程桌面连接设置.html" />
     <link rel="prev" title="产品说明" href="5产品说明.html" /> 
 </head>
 
@@ -90,14 +90,14 @@
 <li class="toctree-l1"><a class="reference internal" href="3包装主要清单.html">第三章.包装主要清单</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4模块安装说明.html">第四章.模块安装说明</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5产品说明.html">第五章.产品说明</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">第六章.QGC和MP地面站网口摄像头图传连接</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第六章.QGC地面站、网口摄像头和图传的连接</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">6.1 准备工作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">6.2 测试摄像头</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">6.3 连接摄像头和图传</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="7远程桌面连接设置.html">第七章.远程桌面连接设置</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8TTL数据传输链接设置.html">第八章.TTL数据传输连接设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8图数传移动端连接飞控.html">第八章.图数传移动端连接飞控</a></li>
 </ul>
 
             
@@ -143,13 +143,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>QGC和MP地面站网口摄像头图传链接</li>
+      <li>第六章   QGC地面站、网口摄像头和图传的连接</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/docs/6QGC和MP地面站网口摄像头图传链接.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/docs/6QGC地面站、网口摄像头和图传的连接.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -162,18 +162,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="qgcmp">
-<h1>QGC和MP地面站网口摄像头图传链接<a class="headerlink" href="#qgcmp" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="qgc">
+<h1>第六章   QGC地面站、网口摄像头和图传的连接<a class="headerlink" href="#qgc" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>6.1 准备工作<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>安装摄像头电脑客户端，VLC，QGC，了解RTSP网络传输协议，具备基本的TCP/IP网络链接知识。
 上面软件的下载地址为：</p>
 <blockquote>
 <div><dl class="docutils">
-<dt>1.QGC链接：<a class="reference external" href="https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w">https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w</a></dt>
-<dd>提取码：4h3u</dd>
-<dt>2.摄像头电脑客户端和VLC链接：<a class="reference external" href="https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA">https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA</a></dt>
-<dd>提取码：rr5b</dd>
+<dt>1.QGC链接：</dt>
+<dd><a class="reference external" href="https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w">https://pan.baidu.com/s/1J-iOP1VOdHNZi3bK_dVx2w</a>
+提取码：4h3u</dd>
+<dt>2.摄像头电脑客户端和VLC链接：</dt>
+<dd><a class="reference external" href="https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA">https://pan.baidu.com/s/1OUhhKr80nOSNILc5qti2GA</a>
+提取码：rr5b</dd>
 </dl>
 </div></blockquote>
 </div>
@@ -249,23 +251,28 @@
 <div><img alt="../_images/sxt08.png" src="../_images/sxt08.png" />
 </div></blockquote>
 <ol class="arabic simple" start="6">
-<li><dl class="first docutils">
-<dt>测试RTSP格式的视频流：打开VLC——媒体——打开网络串流——网络——输入URL。</dt>
-<dd>URL示例：
-<a class="reference external" href="rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp">rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp</a>?
-确保网络摄像头的IP，如果默认192.168.1.10，被修改了就按照修改的IP地址，可以ping通就行。</dd>
-</dl>
-</li>
+<li>测试RTSP格式的视频流：打开VLC——媒体——打开网络串流——网络——输入URL。</li>
 </ol>
 <blockquote>
-<div><img alt="../_images/sxt09.png" src="../_images/sxt09.png" />
-</div></blockquote>
-<ol class="arabic simple" start="7">
-<li>点击播放，显示摄像头图像;</li>
-<li><dl class="first docutils">
-<dt>用同样的URL可以在GQC地面站添加RTSP视频流：视频来源选择RTSP，URL输入测试通过的URL：</dt>
-<dd><a class="reference external" href="rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp">rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp</a>?</dd>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>URL示例：</dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span>rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp?
+</pre></div>
+</div>
+</dd>
 </dl>
+<p>确保网络摄像头的IP，如果默认192.168.1.10，被修改了就按照修改的IP地址，可以ping通就行。</p>
+</div></blockquote>
+<img alt="../_images/sxt09.png" src="../_images/sxt09.png" />
+</div></blockquote>
+<ol class="arabic" start="7">
+<li><p class="first">点击播放，显示摄像头图像;</p>
+</li>
+<li><p class="first">用同样的URL可以在GQC地面站添加RTSP视频流：视频来源选择RTSP，URL输入测试通过的URL：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rtsp://192.168.1.83:554/user=admin&amp;password=&amp;channel=1&amp;stream=0.sdp?
+</pre></div>
+</div>
 </li>
 </ol>
 <blockquote>
@@ -284,7 +291,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="7远程桌面连接设置.html" class="btn btn-neutral float-right" title="第七章 图数传远程桌面连接设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="7远程桌面连接设置.html" class="btn btn-neutral float-right" title="第七章 远程桌面连接设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="5产品说明.html" class="btn btn-neutral float-left" title="产品说明" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
