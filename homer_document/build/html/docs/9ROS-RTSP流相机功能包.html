@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>第九章 ROS-RTSP流相机功能包 &mdash; HOMER_wiki 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="第八章 图数传移动端连接飞控" href="8图数传移动端连接飞控.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HOMER_wiki
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1免责声明与简介.html">第一章.免责声明与简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2产品使用注意事项.html">第二章.产品使用注意事项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3包装主要清单.html">第三章.包装主要清单</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4模块安装说明.html">第四章.模块安装说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5产品说明.html">第五章.产品说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6QGC地面站、网口摄像头和图传的连接.html">第六章.QGC地面站、网口摄像头和图传的连接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7远程桌面连接设置.html">第七章.远程桌面连接设置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8图数传移动端连接飞控.html">第八章.图数传移动端连接飞控</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第九章.ROS-RTSP流相机功能包</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">9.0  测试软件环境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">9.1  创建工作空间</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch">9.2  修改launch文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ros">9.3  启动ROS节点</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HOMER_wiki</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>第九章   ROS-RTSP流相机功能包</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/9ROS-RTSP流相机功能包.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ros-rtsp">
+<h1>第九章   ROS-RTSP流相机功能包<a class="headerlink" href="#ros-rtsp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>9.0  测试软件环境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>1.ubuntu 18.04</p>
+<p>2.ROS melodic</p>
+<p>3.RTSP流相机-ROS功能包</p>
+<p>rocon_rtsp_camera_relay</p>
+<p>WIKI：<a class="reference external" href="http://wiki.ros.org/rocon_rtsp_camera_relay">http://wiki.ros.org/rocon_rtsp_camera_relay</a></p>
+<p>源码：<a class="reference external" href="https://github.com/robotics-in-concert/rocon_devices">https://github.com/robotics-in-concert/rocon_devices</a></p>
+<p>备注：软件版本并非强制，可自行测试。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>9.1  创建工作空间<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>打开新终端</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">rtsp_ws</span><span class="o">/</span><span class="n">src</span>
+
+<span class="n">cd</span> <span class="n">rtsp_ws</span><span class="o">/</span><span class="n">src</span>
+
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">robotics</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">concert</span><span class="o">/</span><span class="n">rocon_devices</span><span class="o">.</span><span class="n">git</span>
+
+<span class="n">cd</span> <span class="o">..</span>
+
+<span class="n">catkin_make</span>
+</pre></div>
+</div>
+<p>打开新终端</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gedit .bashrc
+
+//文档末尾添加，保存,关闭
+source ~/rtsp_ws/devel/setup.bash
+
+source ~/.bashrc
+</pre></div>
+</div>
+</div>
+<div class="section" id="launch">
+<h2>9.2  修改launch文件<a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h2>
+<p>打开新终端</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">修改launch</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">rtsp_ws</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">rocon_devices</span><span class="o">/</span><span class="n">rocon_rtsp_camera_relay</span><span class="o">/</span><span class="n">launch</span><span class="o">/</span>
+
+<span class="n">gedit</span> <span class="n">rtsp_camera_relay</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>添加RTSP链接，提供如下修改示例</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;rtsp://192.168.1.83:554/user=admin&amp;amp;password=&amp;amp;channel=1&amp;amp;stream=0.sdp?&quot;</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>修改后的launch文件如下图：</dt>
+<dd><img alt="../_images/rtsp01.png" class="first last" src="../_images/rtsp01.png" />
+</dd>
+</dl>
+</div>
+<div class="section" id="ros">
+<h2>9.3  启动ROS节点<a class="headerlink" href="#ros" title="Permalink to this headline">¶</a></h2>
+<p>打开新终端</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>//运行launch，启动ROS节点
+roslaunch rocon_rtsp_camera_relay rtsp_camera_relay.launch --screen
+</pre></div>
+</div>
+<p>可以再打开一个新终端，查看发布的图像话题</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rqt_image_view</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>效果如下:</dt>
+<dd><img alt="../_images/rtsp02.png" class="first last" src="../_images/rtsp02.png" />
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="8图数传移动端连接飞控.html" class="btn btn-neutral float-left" title="第八章 图数传移动端连接飞控" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, amov-dev
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
