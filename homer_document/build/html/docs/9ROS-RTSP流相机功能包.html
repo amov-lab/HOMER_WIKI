@@ -165,6 +165,9 @@
             
   <div class="section" id="ros-rtsp">
 <h1>第九章   ROS-RTSP流相机功能包<a class="headerlink" href="#ros-rtsp" title="Permalink to this headline">¶</a></h1>
+<p>我们在做图像处理的时候，尤其在ROS环境下面，需要图像数据，网口的摄像头市面上比较多，技术也相对比较成熟。网络摄像头一般，
+都支持RTSP的流媒体协议流。下面的操作是基于一个网口摄像头的RTSP摄像头和一台机载计算机接入图数传，机载计算机通过网口，
+读取和解析RTSP的数据流成标准的ROS的image消息，有了这个消息一些ROS包里面的一些图像处理算法可以直接使用。</p>
 <div class="section" id="id1">
 <h2>9.0  测试软件环境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
@@ -235,7 +238,11 @@ roslaunch rocon_rtsp_camera_relay rtsp_camera_relay.launch --screen
 <dt>效果如下:</dt>
 <dd><img alt="../_images/rtsp02.png" class="first last" src="../_images/rtsp02.png" />
 </dd>
+<dt>帧率和消息如下：</dt>
+<dd><img alt="../_images/rtsp03.jpg" class="first last" src="../_images/rtsp03.jpg" />
+</dd>
 </dl>
+<p>20帧率左右，RTSP还是可以配置的，应该可以达到更高的帧率。还有就是在TX2下面测试，会占用额外的CPU使用率5%/10%左右。</p>
 </div>
 </div>
 
